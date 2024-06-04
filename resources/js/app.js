@@ -13,6 +13,7 @@ window.addEventListener('load', () => {
   setInterval(async () => {
     const stat = await window.MUXapi.ServersListHealth()
     stat['data'].forEach((data) => {
+      window.serverCharts[data.server.key].online = data.online
       window.serverCharts[data.server.key].pushDataInAll(data.health.cpu_load_avg, data.health.active_tasks)
     })
   }, 1000)
