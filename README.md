@@ -15,7 +15,7 @@ MUXAPI_HOST=127.0.0.1
 MUXAPI_PORT=YOUR_MUXAPI_PORT
 MUXAPI_KEY=YOUR_MUXAPI_KEY
 ```
-`YOUR_MUX_API` and `MUXAPI_PORT` should be same as in `condig.yaml` in [MUXbalancer](https://github.com/AllesMUX/MUXbalancer).
+`YOUR_MUX_API` and `YOUR_MUXAPI_PORT` should be same as in `condig.yaml` in [MUXbalancer](https://github.com/AllesMUX/MUXbalancer).
 
 Setup in `database/seeders/DatabaseSeeder.php` your login and password and create new user:
 ```
