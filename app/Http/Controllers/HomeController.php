@@ -29,12 +29,16 @@ class HomeController extends Controller
         $request = new Request();
         $request->replace(['method' => 'servers_list']);
         $servers = $serverApi->SendApiRequest($request);
-        foreach($servers['data'] as $server) {
-            $serverKeys[] = $server['key'];
+        if($servers) {
+            foreach($servers['data'] as $server) {
+                $serverKeys[] = $server['key'];
+            }
+            return view('home', [
+                'servers' => $servers['data'],
+                'server_keys' => $serverKeys,
+            ]);
         }
-        return view('home', [
-            'servers' => $servers['data'],
-            'server_keys' => $serverKeys,
-        ]);
+        return view('offline'); 
+
     }
 }

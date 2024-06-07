@@ -16,4 +16,19 @@ export default class MUXapi {
       method: 'servers_list_health'
     });
   }
+  async AddServer(protocol, addr, port, worker_port) {
+    return await this._sendApiRequest({
+      method: 'server_add',
+      protocol: protocol,
+      addr: addr,
+      port: port,
+      worker_port: worker_port
+    });
+  }
+  async RemoveServer(key) {
+    return await this._sendApiRequest({
+      method: 'server_delete',
+      key: key
+    });
+  }
 }

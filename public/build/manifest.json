@@ -1,4 +1,12 @@
 {
+  "_api-BWQpjcnu.js": {
+    "file": "assets/api-BWQpjcnu.js",
+    "name": "api"
+  },
+  "_api-CsYPoTg1.js": {
+    "file": "assets/api-CsYPoTg1.js",
+    "name": "api"
+  },
   "bootstrap-icons.woff": {
     "file": "assets/bootstrap-icons-BOrJxbIo.woff",
     "src": "bootstrap-icons.woff"
@@ -16,10 +24,22 @@
     "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-CQe2BtUp.js",
+    "file": "assets/app-CGmoiKc4.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_api-CsYPoTg1.js"
+    ]
+  },
+  "resources/js/server-add.js": {
+    "file": "assets/server-add-W_5teanR.js",
+    "name": "server-add",
+    "src": "resources/js/server-add.js",
+    "isEntry": true,
+    "imports": [
+      "_api-CsYPoTg1.js"
+    ]
   },
   "resources/sass/app.scss": {
     "file": "assets/app-Cb6BU2IT.css",

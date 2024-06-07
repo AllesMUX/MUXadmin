@@ -15,9 +15,13 @@ class ServerApiController extends Controller
         $this->apiKey = env('MUXAPI_KEY');
     }
     public function SendApiRequest(Request $request) {
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $this->apiKey,
-        ])->get("http://{$this->host}:{$this->port}/?".http_build_query($request->query()));
+        try {
+	       $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $this->apiKey,
+            ])->get("http://{$this->host}:{$this->port}/?".http_build_query($request->query()));
+        } catch (\Exception) { // request failed
+	       return false;
+        }
         return $response->json();
     }
 }
